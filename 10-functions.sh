@@ -3,12 +3,12 @@
 ID=$(id -u)
 
 VALIDATE(){
-    if [ $? -ne 0 ]
+    if [ $1 -ne 0 ]
     then 
-        echo "ERTOR:: Installing is failed"
+        echo "ERTOR:: $2 ... FAILED"
         exit 1
     else
-        echo "Installing is success"
+        echo "$2 ... success"
     fi
 
 }
@@ -23,8 +23,8 @@ fi
 
 yum install mysql -y
 
-VALIDATE
+VALIDATE $? "Installing MYSQL"
 
 yum install git -y
 
-VALIDATE
+VALIDATE $? "installing GIT"
