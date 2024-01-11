@@ -10,3 +10,5 @@ echo "Total:: $SUM"
 echo "How many orgs passed:: $#"
 
 echo "ALL args passed:: $@"
+
+echo "Script name:: $0"
